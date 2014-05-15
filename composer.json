@@ -1,7 +1,7 @@
 {
     "name": "katsuo-ryuu/kryuu-language-selector",
     "description": "Auto selecting the language depending on the clients browser settings",
-    "type": "module",
+    "type": "library",
     "license": "Ryuu Technology License",
     "keywords": [
         "zf2",
