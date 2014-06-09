@@ -17,7 +17,7 @@ class LanguageSelector {
 	{
 		$this->setLanguageArray();
 		if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-			$language = \Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+			$language = @\Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']);
 			if (array_key_exists($language,$this->languages))
 				return $this->languages[$language];
 			else
