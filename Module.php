@@ -2,12 +2,20 @@
 /**
  * @Author: Anders Blenstrup-Pedersen
  */
-namespace LanguageSelector;
+namespace KryuuLanguageSelector;
 
-use LanguageSelector\Exception;
+use KryuuLanguageSelector\Exception;
+use Zend\Mvc\MvcEvent;
 
 class Module
 {
+    public function onBootstrap(MvcEvent $e)
+	{	
+        $translator = $e->getApplication()->getServiceManager()->get('translator');
+        $translator
+          ->setLocale($e->getApplication()->getServiceManager()->get('KryuuLanguageSelector')->Language()->getLanguage())
+          ->setFallbackLocale('en_US');
+    }
     /**
      * @return array
      */
@@ -33,7 +41,7 @@ class Module
         $module = $this;
         return array(
             'factories' => array(
-                'LanguageSelector' => function () use ($module) {
+                'KryuuLanguageSelector' => function () use ($module) {
                     return $module;
                 },
             ),
@@ -50,7 +58,7 @@ class Module
     {
         try
         {
-            $Language = new \LanguageSelector($true);
+            $Language = new \KryuuLanguageSelector($true);
         }
         catch (\Exception $e)
         {

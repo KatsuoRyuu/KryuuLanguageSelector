@@ -8,7 +8,7 @@ if (version_compare(PHP_VERSION, '5.0.0', '<') ) exit("Sorry, this version of PH
 /**
  * Main PHPMailer class definition
  */
-class LanguageSelector {
+class KryuuLanguageSelector {
 
 	protected $languages;
 	protected $defaultLanguage = "en_US";
@@ -42,4 +42,3 @@ class LanguageSelector {
 	}
 
 }
-?>

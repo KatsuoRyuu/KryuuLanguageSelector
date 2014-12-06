@@ -4,7 +4,7 @@
  * @Contact: cel@cenics.net
  * @Company: Cencis s.c.p.
  */
-namespace LanguageSelector\Exception;
+namespace KryuuLanguageSelector\Exception;
 
 interface ExceptionInterface
 {
